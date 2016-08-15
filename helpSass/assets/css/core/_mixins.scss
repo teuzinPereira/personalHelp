@@ -1,0 +1,12 @@
+@mixin btn {
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+@mixin border-radius($rd){
+    -webkit-border-radius: $rd;
+    -moz-border-radius: $rd;
+    -ms-border-radius: $rd;
+    border-radius: $rd;
+}

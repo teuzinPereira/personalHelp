@@ -1,0 +1,49 @@
+.container {
+    // uma div centralizada com largura definida
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    width: $largura_pagina;
+    //border: $borda_padrao;
+    @include border-radius(10px);
+}
+
+.btn-azul {
+    @include btn;
+    @include border-radius(10px);
+    background: $azul;
+    color: white;
+    
+    &:hover {
+        background: red;
+    }
+    
+}
+
+%titulo {
+    font-size: 40px;   
+}
+
+.sublinhado {
+    @extend %titulo;
+    text-decoration: underline;
+}
+
+.btn-menor {
+    width: diferenca($largura_pagina, $largura_pagina/2);   
+}
+
+.item {
+    margin-bottom: 50px;   
+    
+    h1 {
+        color: red;   
+    };
+    
+    p {
+      padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+}
+
