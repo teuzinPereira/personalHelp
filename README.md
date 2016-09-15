@@ -1,3 +1,3 @@
 # personalHelp
 
-Ajuda para usar o SASS em seus projetos
+Repositório de códigos para auxiliar nas implementações!
