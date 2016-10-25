@@ -1,22 +1,18 @@
 $(function () {
-      $('#inputTelefone')
-              .mask("9999-9999?9")
-              .keydown(function () {
-                  var $elem = $(this);
-                  var tamanhoAnterior = this.value.replace(/\D/g, '').length;
-                  setTimeout(function () {
-                      var novoTamanho = $elem.val().replace(/\D/g, '').length;
-                      if (novoTamanho !== tamanhoAnterior) {
-                          if (novoTamanho === 11) {
-                              $elem.unmask();
-                              $elem.mask("99999-9999");
-                          } else if (novoTamanho === 10) {
-                              $elem.unmask();
-                              $elem.mask("9999-9999?9");
-                          }
-                      }
-                  }, 1);
-              });
+      jQuery(".mask-telefone")
+        .mask("(99) 9999-9999?9")
+        .focusout(function (event) {
+            var target, phone, element;
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);
+            element.unmask();
+            if (phone.length > 10) {
+                element.mask("(99) 9 9999-999?9");
+            } else {
+                element.mask("(99) 9999-9999?9");
+            }
+        });
       
       //First import datepicker plugin
       $('#data-evento').datepicker({
