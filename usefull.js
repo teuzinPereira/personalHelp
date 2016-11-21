@@ -1,4 +1,25 @@
 $(function () {
+      var dados = {id_usuario: oassesid};
+    $.ajax({
+        url: "http://www.melhorcomprapocos.com.br/controller/app/listas_usuario.php",
+        type: "POST",
+        dataType: "json",
+        data: dados,
+        async: true,
+        timeout: 10000,
+        success: function (data) {
+            $('.carregar-conteudo').toggle();
+        },
+        error: function (x, t, m) {
+            $('.carregar-conteudo').toggle();
+            if (t === "timeout") {
+                alert('Conexão está lenta ou é inexistente.');
+            } else {
+                alert("Tente novamente.");
+            }
+        }
+    });
+      
       jQuery(".mask-telefone")
         .mask("(99) 9999-9999?9")
         .focusout(function (event) {
