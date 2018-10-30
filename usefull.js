@@ -1,7 +1,7 @@
 $(function () {
       var dados = {id_usuario: oassesid};
     $.ajax({
-        url: "http://www.melhorcomprapocos.com.br/controller/app/listas_usuario.php",
+        url: "http://xxx/controller/app/listas_usuario.php",
         type: "POST",
         dataType: "json",
         data: dados,
